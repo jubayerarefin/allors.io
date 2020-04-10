@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'Allors', // Usually your GitHub org/user name.
-  projectName: 'Allors/Docs', // Usually your repo name.
+  projectName: 'Docs', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Allors Docs',
