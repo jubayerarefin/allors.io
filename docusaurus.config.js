@@ -11,7 +11,7 @@ module.exports = {
       title: 'Allors Docs',
       logo: {
         alt: 'Allors Logo',
-        src: 'img/logo.svg',
+        src: 'img/allors.png',
       },
       links: [
         {
