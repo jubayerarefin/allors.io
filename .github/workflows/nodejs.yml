@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -26,4 +26,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: yarn run build
-    - run: cmd /C "set "GIT_USER=allors"&& set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"
+    - run: GIT_USER=jubayerarefin \
+            CURRENT_BRANCH=master \
+            USE_SSH=false \
+            yarn run deploy
