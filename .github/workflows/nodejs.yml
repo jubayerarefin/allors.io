@@ -33,7 +33,7 @@ jobs:
     - name: Deploy Website
       run: yarn run deploy
       env:
-        GIT_USER: $GITHUB_ACTOR
+        GIT_USER: ${{GITHUB_ACTOR}}
         CURRENT_BRANCH: master
         USE_SSH: false
         GITHUB_TOKEN: ${{secrets.GitHub}}
