@@ -1,4 +1,4 @@
-![Allors Docs CI](https://github.com/Allors/Docs/workflows/Node.js%20Docusaurus%20CI/badge.svg)
+![Allors Docs CI](https://github.com/Allors/Docs/workflows/Allors%20Docs%20CI/badge.svg)
 
 # Website https://allors.github.io/Docs/
 
