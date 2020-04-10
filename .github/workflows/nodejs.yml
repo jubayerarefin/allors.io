@@ -26,4 +26,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: yarn run build
-    - run: cmd /C "set "GIT_USER=jubayerarefin" && set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"
+    - run: ./build.ps1
+      shell: pwsh
