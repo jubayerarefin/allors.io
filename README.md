@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/Allors/Docs/workflows/Node.js%20CI/badge.svg)
+
 # Website https://allors.github.io/Docs/
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
