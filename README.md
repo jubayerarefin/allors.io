@@ -1,4 +1,4 @@
-![Node.js CI](https://github.com/Allors/Docs/workflows/Node.js%20CI/badge.svg)
+
 
 # Website https://allors.github.io/Docs/
 
