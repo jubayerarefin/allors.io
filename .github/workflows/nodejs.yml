@@ -33,7 +33,7 @@ jobs:
     - name: Deploy Website
       shell: cmd
       run: |
-        eval $(ssh-agent -s)
+        start-ssh-agent
         ssh-add ${{ secrets.Deploy_Key_Private }}
         cmd /C "set "GIT_USER=%GIT_USER%" && set CURRENT_BRANCH=%CURRENT_BRANCH% && set USE_SSH=%USE_SSH% && yarn run deploy"
       env:
