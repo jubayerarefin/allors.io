@@ -35,7 +35,9 @@ jobs:
       run: start-ssh-agent
     - name: Setup SSH-Key
       shell: cmd
-      run: ssh-add ${{ secrets.Deploy_Key_Private }}
+      run: |
+        echo ${{ secrets.Deploy_Key_Private }} > id_rsa
+        ssh-add id_rsa
     - name: Deploy Website
       shell: cmd
       env:
