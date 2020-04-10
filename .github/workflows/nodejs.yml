@@ -25,10 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
-    - run: yarn install
+      run: yarn install
     - name: Build Website
-    - run: yarn run build
+      run: yarn run build
     - name: Setup Github ENV
-    - run: git config --global user.email "jubayerarefin@users.noreply.github.com" && git config --global user.name "jubayeraraefin"
+      run: git config --global user.email "jubayerarefin@users.noreply.github.com" && git config --global user.name "jubayeraraefin"
     - name: Deploy Website
-    - run: set GIT_USER=jubayerarefin && set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy
+      run: set GIT_USER=jubayerarefin && set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy
