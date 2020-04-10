@@ -36,3 +36,4 @@ jobs:
         GIT_USER: $GITHUB_ACTOR
         CURRENT_BRANCH: master
         USE_SSH: false
+        GITHUB_TOKEN: ${{secrets.GitHub}}
