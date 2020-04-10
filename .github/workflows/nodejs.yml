@@ -31,9 +31,11 @@ jobs:
     - name: Setup Github ENV
       run: git config --global user.email "jubayerarefin@users.noreply.github.com" && git config --global user.name "jubayerarefin"
     - name: Deploy Website
-      run: yarn run deploy
+      shell: cmd
+      run: |
+        yarn run deploy "%GITHUB_TOKEN%"
       env:
         GIT_USER: jubayerarefin
         CURRENT_BRANCH: master
         USE_SSH: true
-        GITHUB_TOKEN: ${{secrets.GitHub}}
+        GITHUB_TOKEN: ${{secrets.PAT}}
