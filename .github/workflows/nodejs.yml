@@ -35,5 +35,5 @@ jobs:
       env:
         GIT_USER: jubayerarefin
         CURRENT_BRANCH: master
-        USE_SSH: false
+        USE_SSH: true
         GITHUB_TOKEN: ${{secrets.GitHub}}
