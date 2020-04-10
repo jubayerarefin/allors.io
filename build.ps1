@@ -1,0 +1,1 @@
+cmd /C "set "GIT_USER=jubayerarefin"&& set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"
