@@ -30,9 +30,12 @@ jobs:
       run: yarn run build
     - name: Setup Github ENV
       run: git config --global user.email "jubayerarefin@users.noreply.github.com" && git config --global user.name "jubayerarefin"
-    - name: Setup Git
+    - name: Start SSH-Agent
       shell: cmd
-      run: start-ssh-agent && ssh-add ${{ secrets.Deploy_Key_Private }}
+      run: start-ssh-agent
+    - name: Setup SSH-Key
+      shell: cmd
+      run: ssh-add ${{ secrets.Deploy_Key_Private }}
     - name: Deploy Website
       shell: cmd
       env:
