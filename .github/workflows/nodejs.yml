@@ -33,11 +33,12 @@ jobs:
     - name: Start SSH-Agent
       shell: cmd
       run: start-ssh-agent
-    - name: Setup SSH-Key
+    - name: Create SSH-Key
       shell: cmd
-      run: |
-        echo ${{ secrets.Deploy_Key_Private }} > id_rsa
-        ssh-add id_rsa
+      run: echo ${{ secrets.Deploy_Key_Private }} > id_rsa
+    - name: Setup SSH-Key
+      shell: bash
+      run: ssh-add id_rsa
     - name: Deploy Website
       shell: cmd
       env:
