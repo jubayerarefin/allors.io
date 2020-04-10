@@ -33,7 +33,7 @@ jobs:
     - name: Deploy Website
       shell: cmd
       run: |
-        yarn run deploy "%GITHUB_TOKEN%"
+        cmd /C "set "GIT_USER=%GIT_USER%" && set CURRENT_BRANCH=%CURRENT_BRANCH% && set USE_SSH=%USE_SSH% && yarn run deploy" "%GITHUB_TOKEN%"
       env:
         GIT_USER: jubayerarefin
         CURRENT_BRANCH: master
