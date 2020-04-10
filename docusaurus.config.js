@@ -1,8 +1,8 @@
 module.exports = {
   title: 'Allors Documentation',
   tagline: 'Bolt cutter-proof end to end software development stack',
-  url: 'https://allors.github.io',
-  baseUrl: '/',
+  url: 'https://allors.github.io/',
+  baseUrl: '/Docs',
   favicon: 'img/favicon.ico',
   organizationName: 'Allors', // Usually your GitHub org/user name.
   projectName: 'Docs', // Usually your repo name.
