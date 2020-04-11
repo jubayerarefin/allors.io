@@ -35,7 +35,7 @@ jobs:
       run: cat <<< "${{ secrets.Deploy_Key_Private }}" > ~/Deploy_Key_Private
     - name: Start Agent & Setup SSH-Key
       shell: bash
-      run: eval $(ssh-agent -s) && ssh-add ~/Deploy_Key_Private
+      run: eval $(ssh-agent -s) && chmod 400 ~/Deploy_Key_Private && ssh-add ~/Deploy_Key_Private
     - name: Deploy Website
       shell: bash
       env:
