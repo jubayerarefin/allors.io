@@ -33,12 +33,9 @@ jobs:
     - name: Start SSH-Agent
       shell: bash
       run: eval $(ssh-agent -s)
-    - name: Create SSH-Key
-      shell: bash
-      run: echo ${{ secrets.Deploy_Key_Private }} | tee id_rsa
     - name: Setup SSH-Key
       shell: bash
-      run: ssh-add id_rsa
+      run: ssh-add ${{ secrets.Deploy_Key_Private }}
     - name: Deploy Website
       shell: bash
       env:
