@@ -38,11 +38,7 @@ jobs:
       run: eval $(ssh-agent -s) && chmod 400 ~/Deploy_Key_Private && ssh-add ~/Deploy_Key_Private
     - name: Deploy Website
       shell: bash
-      env:
-        GIT_USER: jubayerarefin
-        CURRENT_BRANCH: master
-        USE_SSH: true
-      run: GIT_USER="%GIT_USER%" \
-        CURRENT_BRANCH=%CURRENT_BRANCH% \
-        USE_SSH=%USE_SSH% \
+      run: GIT_USER=jubayerarefin \
+        CURRENT_BRANCH=master \
+        USE_SSH=true \
         yarn run deploy
