@@ -29,13 +29,19 @@ jobs:
     - name: Build Website
       run: yarn run build
     - name: Setup Github ENV
-      run: git config --global user.email "jubayerarefin@users.noreply.github.com" && git config --global user.name "jubayerarefin"
+      run: |
+        git config --global user.email "jubayerarefin@users.noreply.github.com"
+        git config --global user.name "jubayerarefin"
     - name: Create SSH-Key
       shell: bash
       run: cat <<< "${{ secrets.Deploy_Key_Private }}" > ~/Deploy_Key_Private
     - name: Start Agent & Setup SSH-Key
       shell: bash
-      run: eval $(ssh-agent -s) && chmod 400 ~/Deploy_Key_Private && ssh-add ~/Deploy_Key_Private && ssh-keyscan -t rsa github.com
+      run: |
+        eval $(ssh-agent -s)
+        chmod 400 ~/Deploy_Key_Private
+        ssh-add ~/Deploy_Key_Private
+        ssh-keyscan -t rsa github.com
     - name: Deploy Website
       shell: bash
       run: |
