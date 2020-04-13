@@ -45,8 +45,7 @@ jobs:
         ssh-keyscan -t rsa github.com
     - name: Deploy Website
       shell: bash
-      run: |
-        GIT_USER=jubayerarefin \
+      run: GIT_USER=jubayerarefin \
         CURRENT_BRANCH=master \
         USE_SSH=true \
         "${{ secrets.Deploy_PAT }}" | yarn run deploy
