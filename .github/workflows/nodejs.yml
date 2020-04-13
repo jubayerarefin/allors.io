@@ -45,10 +45,9 @@ jobs:
         ssh-keyscan -t rsa github.com
     - name: Set ENV
       shell: bash
-      run: |
-        GIT_USER=jubayerarefin \
+      run: GIT_USER=jubayerarefin \
         CURRENT_BRANCH=master \
         USE_SSH=false
     - name: Deploy Website
       run: |
-        "${{ secrets.Deploy_PAT }}" | yarn run deploy
+        cat <<< "${{ secrets.Deploy_PAT }}" | yarn run deploy
