@@ -45,4 +45,8 @@ jobs:
         ssh-keyscan -t rsa github.com
     - name: Deploy Website
       shell: bash
-      run: cmd /C "set "GIT_USER=jubayerarefin" && set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"    
+      run: |
+        GIT_USER=jubayerarefin \
+        CURRENT_BRANCH=master \
+        USE_SSH=true \
+        yarn run deploy
