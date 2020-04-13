@@ -50,10 +50,4 @@ jobs:
         CURRENT_BRANCH: 'master'
         USE_SSH: false
         TOKEN: ${{ secrets.Deploy_PAT }}
-      run: |
-        expect <<EOF 
-        spawn yarn run deploy
-        expect "assword"
-        send "$TOKEN"
-        interact
-        EOF    
+      run: ./script.sh
