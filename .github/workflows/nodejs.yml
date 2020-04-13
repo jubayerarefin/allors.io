@@ -51,9 +51,9 @@ jobs:
         USE_SSH: false
         TOKEN: ${{ secrets.Deploy_PAT }}
       run: |
-        yarn run deploy
         expect <<EOF 
-        spawn your-command-here
+        spawn yarn run deploy
         expect "assword"
-        send $TOKEN
+        send "$TOKEN"
+        interact
         EOF    
