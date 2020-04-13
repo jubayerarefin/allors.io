@@ -39,7 +39,7 @@ jobs:
       shell: bash
       run: |
         eval $(ssh-agent -s)
-        chmod 400 ~/Deploy_Key_Private
+        chmod 600 ~/Deploy_Key_Private
         ssh-add ~/Deploy_Key_Private
         ssh-keyscan -t rsa github.com
     - name: Set ENV & Deploy Website
