@@ -46,6 +46,6 @@ jobs:
       env:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
-        USE_SSH: true
+        USE_SSH: false
       run: |
-        yarn run deploy < "${{ secrets.Deploy_PAT }}"
+        yarn run deploy <<< "${{ secrets.Deploy_PAT }}"
