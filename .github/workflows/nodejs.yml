@@ -44,7 +44,7 @@ jobs:
         ssh-add ~/Deploy_Key_Private
         ssh-keyscan -t rsa github.com
     - name: Deploy Website
-      shell: pwsh
+      shell: bash
       run: |
         GIT_USER=jubayerarefin \
         CURRENT_BRANCH=master \
