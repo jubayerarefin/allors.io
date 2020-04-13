@@ -45,4 +45,4 @@ jobs:
         ssh-keyscan -t rsa github.com
     - name: Deploy Website
       shell: pwsh
-      run: cmd /C "set "GIT_USER=<>"&& set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy" <<< "${{ secrets.Deploy_PAT }}"
+      run: cat <<< "${{ secrets.Deploy_PAT }}" | cmd /C "set "GIT_USER=<>"&& set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"
