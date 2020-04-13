@@ -25,7 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies
-      run: yarn install
+      run: |
+        yarn install
+        sudo apt install expect
     - name: Build Website
       run: yarn run build
     - name: Setup Github ENV
@@ -47,5 +49,11 @@ jobs:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
         USE_SSH: false
+        TOKEN: ${{ secrets.Deploy_PAT }}
       run: |
-        yarn run deploy <<< ${{ secrets.Deploy_PAT }}
+        yarn run deploy
+        expect <<EOF 
+        spawn your-command-here
+        expect "assword"
+        send $TOKEN
+        EOF    
