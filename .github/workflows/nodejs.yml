@@ -24,7 +24,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-        token: ${{ secrets.Deploy_PAT }} # Personal Access Token of GitHub
     - name: Install Dependencies
       run: yarn install
     - name: Build Website
@@ -44,10 +43,10 @@ jobs:
         ssh-add ~/Deploy_Key_Private
         ssh-keyscan -t rsa github.com
     - name: Set ENV
-      shell: bash
-      run: GIT_USER=jubayerarefin \
-        CURRENT_BRANCH=master \
-        USE_SSH=false
+      env:
+        GIT_USER: 'jubayerarefin'
+        CURRENT_BRANCH: 'master'
+        USE_SSH: false
     - name: Deploy Website
       run: |
         cat <<< "${{ secrets.Deploy_PAT }}" | yarn run deploy
