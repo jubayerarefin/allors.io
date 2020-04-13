@@ -48,4 +48,4 @@ jobs:
         CURRENT_BRANCH: 'master'
         USE_SSH: false
       run: |
-        yarn run deploy <<< "${{ secrets.Deploy_PAT }}"
+        yarn run deploy <<< ${{ secrets.Deploy_PAT }}
