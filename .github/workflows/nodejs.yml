@@ -43,9 +43,11 @@ jobs:
         chmod 400 ~/Deploy_Key_Private
         ssh-add ~/Deploy_Key_Private
         ssh-keyscan -t rsa github.com
-    - name: Deploy Website
+    - name: Set ENV
       shell: bash
       run: GIT_USER=jubayerarefin \
         CURRENT_BRANCH=master \
-        USE_SSH=true \
+        USE_SSH=true
+    - name: Deploy Website
+      run: |
         "${{ secrets.Deploy_PAT }}" | yarn run deploy
