@@ -56,7 +56,7 @@ module.exports = {
               href: 'https://discordapp.com/invite/allors',
             },
             {
-              label: 'Facebook',
+              label: 'facebook',
               href: 'https://facekook.com/allors',
             },
           ],
