@@ -34,16 +34,10 @@ jobs:
       run: |
         git config --global user.email "jubayerarefin@users.noreply.github.com"
         git config --global user.name "jubayerarefin"
-    - name: Create SSH-Key
-      shell: bash
-      run: cat <<< "${{ secrets.Deploy_Key_Private }}" > ~/Deploy_Key_Private
-    - name: Start Agent & Setup SSH-Key
-      shell: bash
-      run: |
-        eval $(ssh-agent -s)
-        chmod 600 ~/Deploy_Key_Private
-        ssh-add ~/Deploy_Key_Private
-        ssh-keyscan -t rsa github.com
+    - name: Install SSH Client
+      uses: webfactory/ssh-agent@v0.2.0 # This step installs the ssh client into the workflow run. There's many options available for this on the action marketplace.
+      with:
+        ssh-private-key: ${{ secrets.Deploy_Key_Private }}
     - name: Set ENV & Deploy Website
       env:
         GIT_USER: 'jubayerarefin'
