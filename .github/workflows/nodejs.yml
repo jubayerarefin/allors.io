@@ -48,6 +48,6 @@ jobs:
       env:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
-        USE_SSH: false
-        GITHUB_TOKEN: ${{ secrets.Deploy_PAT }}
+        USE_SSH: true
+        ACCESS_TOKEN: ${{ secrets.Deploy_PAT }}
       run: yarn run deploy
