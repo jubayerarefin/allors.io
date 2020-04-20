@@ -42,6 +42,4 @@ jobs:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
         USE_SSH: true
-      run: |
-        touch ./build/CNAME | cat <<< docs.allors.com > ./build/CNAME
-        yarn run deploy
+      run: yarn run deploy
