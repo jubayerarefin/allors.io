@@ -24,11 +24,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Dependencies
+    - name: Install Dependencies & Build Website
       run: |
         yarn install
-    - name: Build Website
-      run: yarn run build
+        yarn run build
     - name: Setup Github ENV
       run: |
         git config --global user.email "jubayerarefin@users.noreply.github.com"
