@@ -28,10 +28,14 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-Windows
+#### The website is automagically built and published when someone contributes. Though not required, there is also another way to do it manually.
+
+On Windows
 
 ```
 cmd /C "set "GIT_USER=<>"&& set CURRENT_BRANCH=master && set USE_SSH=false && yarn run deploy"
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+If you are contributing, this command is a convenient way to update the website content manually from your development machine.
+
+Keep contributing.
