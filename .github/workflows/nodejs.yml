@@ -49,7 +49,7 @@ jobs:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
         USE_SSH: false
-        TOKEN: ${{ secrets.Deploy_PAT }}
+        GITHUB_TOKEN: ${{ secrets.Deploy_PAT }}
       run: |
         chmod +x script.sh
         ./script.sh
