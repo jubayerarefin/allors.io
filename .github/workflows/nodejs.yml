@@ -27,7 +27,6 @@ jobs:
     - name: Install Dependencies
       run: |
         yarn install
-        sudo apt install expect
     - name: Build Website
       run: yarn run build
     - name: Setup Github ENV
@@ -43,5 +42,4 @@ jobs:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
         USE_SSH: true
-        ACCESS_TOKEN: ${{ secrets.Deploy_PAT }}
       run: yarn run deploy
