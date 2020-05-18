@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    Docusaurus: ['Document'],
+    Allors: ['Document','Dynamic','Excel'],
     Features: ['Excel'],
   },
 };

@@ -8,24 +8,24 @@ module.exports = {
   projectName: 'allors.io', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Allors Docs',
+      title: '',
       logo: {
         alt: 'Allors Logo',
         src: 'img/allors.png',
       },
       links: [
-        // {
-        //   to: 'docs/doc1',
-        //   activeBasePath: 'docs',
-        //   label: 'Docs',
-        //   position: 'left',
-        // },
+        {
+          to: 'docs/Document',
+          activeBasePath: 'docs',
+          label: 'Docs',
+          position: 'left',
+        },
         {to: 'blog', label: 'Blog', position: 'left'},
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          href: 'https://allors.com/',
+          label: 'Allors',
+          position: 'right',
+        },
       ],
     },
     footer: {
