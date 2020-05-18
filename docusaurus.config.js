@@ -14,12 +14,12 @@ module.exports = {
         src: 'img/allors.png',
       },
       links: [
-        {
-          to: 'docs/doc1',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
+        // {
+        //   to: 'docs/doc1',
+        //   activeBasePath: 'docs',
+        //   label: 'Docs',
+        //   position: 'left',
+        // },
         {to: 'blog', label: 'Blog', position: 'left'},
         // {
         //   href: 'https://github.com/facebook/docusaurus',
@@ -35,12 +35,16 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'Document',
+              to: 'docs/Document',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Dynamic',
+              to: 'docs/Dynamic',
+            },
+            {
+              label: 'Excel',
+              to: 'docs/Excel',
             },
           ],
         },
@@ -70,7 +74,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/allors/Docs',
+              href: 'https://github.com/allors/allors.io',
             },
             {
               label: 'Twitter',
@@ -93,7 +97,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/allors/allors.io/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
