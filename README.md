@@ -1,6 +1,6 @@
 ![Allors Docs CI](https://github.com/Allors/Docs/workflows/Allors%20Docs%20CI/badge.svg)
 
-# Website https://allors.github.io/Docs/
+# Website https://allors.io/
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 

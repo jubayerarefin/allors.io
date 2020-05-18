@@ -61,7 +61,7 @@ module.exports = {
             },
             {
               label: 'Facebook',
-              href: 'https://facekook.com/allors',
+              href: 'https://facebook.com/allors',
             },
           ],
         },
