@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Allors Documentation',
   tagline: 'Bolt cutter-proof end to end software development stack',
-  url: 'https://allors.github.io/',
+  url: 'https://allors.io/',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'Allors', // Usually your GitHub org/user name.
@@ -57,7 +57,7 @@ module.exports = {
             },
             {
               label: 'Facebook',
-              href: 'https://facekook.com/allors',
+              href: 'https://facebook.com/allors',
             },
           ],
         },
@@ -70,7 +70,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/allors/Docs',
+              href: 'https://github.com/allors/allors.io',
             },
             {
               label: 'Twitter',
