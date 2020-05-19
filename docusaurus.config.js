@@ -11,7 +11,7 @@ module.exports = {
       title: '',
       logo: {
         alt: 'Allors Logo',
-        src: 'img/allors.png',
+        src: 'img/allors-dark.svg',
       },
       links: [
         {
@@ -20,7 +20,13 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: 'events',
+          activeBasePath: 'events',
+          label: 'Events',
+          position: 'left',
+        },
+        { to: 'blog', label: 'Blog', position: 'left' },
         {
           href: 'https://allors.com/',
           label: 'Allors',
@@ -49,6 +55,15 @@ module.exports = {
           ],
         },
         {
+          title: 'Events',
+          items: [
+            {
+              label: 'DevCon 2020',
+              to: 'events',
+            }
+          ],
+        },
+        {
           title: 'Community',
           items: [
             {
@@ -61,7 +76,7 @@ module.exports = {
             },
             {
               label: 'Facebook',
-              href: 'https://facebook.com/allors',
+              href: 'https://facebook.com/allors.io',
             },
           ],
         },
