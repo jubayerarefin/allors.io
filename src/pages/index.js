@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: <>Document</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    imageUrl: '',
     description: (
       <>
         Work with Documents in Allors
@@ -18,7 +18,7 @@ const features = [
   },
   {
     title: <>Excel</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    imageUrl: '',
     description: (
       <>
         Work with Excel in Allors
@@ -27,7 +27,7 @@ const features = [
   },
   {
     title: <>Dynamic</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    imageUrl: '',
     description: (
       <>
         Allors DLR Implementation
@@ -78,7 +78,7 @@ function Home() {
         {features && features.length && (
           <section className={styles.features}>
             <div className="container">
-              <div className="row">
+              <div className="row text--center">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}

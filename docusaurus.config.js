@@ -120,4 +120,10 @@ module.exports = {
       },
     ],
   ],
+  scripts: [
+    ''
+  ],
+  stylesheets: [
+
+  ]
 };

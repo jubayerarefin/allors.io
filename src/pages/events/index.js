@@ -8,12 +8,11 @@ import styles from '../styles.module.css';
 
 const features = [
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Allors Devcon 2020</>,
+    imageUrl: '',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Welcome to the first ever DevCon event for Allors.
       </>
     ),
   }
@@ -22,7 +21,7 @@ const features = [
 function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
+    <div className={classnames('col col--12', styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -39,8 +38,8 @@ function Events() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`Events`}
+      description="">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Upcoming Events</h1>
@@ -50,7 +49,7 @@ function Events() {
         {features && features.length && (
           <section className={styles.features}>
             <div className="container">
-              <div className="row">
+              <div className="row text--center">
                 {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}
