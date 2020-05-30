@@ -11,7 +11,10 @@ module.exports = {
       title: '',
       logo: {
         alt: 'Allors Logo',
-        src: 'img/allors-dark.svg',
+        src: 'img/allors.svg',
+        srcDark: 'img/allors-dark.svg',
+        href: 'https://allors.io/',
+        target: '_self'
       },
       links: [
         {
