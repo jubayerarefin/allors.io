@@ -16,9 +16,9 @@ module.exports = {
         href: 'https://allors.io/',
         target: '_self'
       },
-      links: [
+      items: [
         {
-          to: 'docs/Document',
+          to: 'docs/Derivation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -45,15 +45,11 @@ module.exports = {
           items: [
             {
               label: 'Document',
-              to: 'docs/Document',
+              to: 'docs/Derivation',
             },
             {
-              label: 'Dynamic',
-              to: 'docs/Dynamic',
-            },
-            {
-              label: 'Excel',
-              to: 'docs/Excel',
+              label: 'Demo',
+              to: 'docs/Demo',
             },
           ],
         },
@@ -123,10 +119,6 @@ module.exports = {
       },
     ],
   ],
-  scripts: [
-    ''
-  ],
-  stylesheets: [
-
-  ]
+  scripts: [],
+  stylesheets: []
 };
