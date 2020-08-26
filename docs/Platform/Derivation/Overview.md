@@ -1,4 +1,7 @@
-import useBaseUrl from '@docusaurus/useBaseUrl';
+---
+id: Overview
+title: Overview
+---
 
 # Derivation in Allors
 

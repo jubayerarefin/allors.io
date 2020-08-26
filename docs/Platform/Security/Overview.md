@@ -1,8 +1,6 @@
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 ---
-id: security-overview
-title: Security Overview
+id: Overview
+title: Overview
 ---
 
 # Security in Allors
