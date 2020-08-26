@@ -26,8 +26,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install Dependencies & Build Website
       run: |
-        yarn install
-        yarn run build
+        npm install
+        npm run build
     - name: Setup Github ENV
       run: |
         git config --global user.email "jubayerarefin@users.noreply.github.com"
@@ -41,4 +41,4 @@ jobs:
         GIT_USER: 'jubayerarefin'
         CURRENT_BRANCH: 'master'
         USE_SSH: true
-      run: yarn run deploy
+      run: npm run deploy
