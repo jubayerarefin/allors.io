@@ -18,7 +18,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/Platform/Derivation',
+          to: 'docs/Platform/Derivation/Overview',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -45,11 +45,11 @@ module.exports = {
           items: [
             {
               label: 'Derivation',
-              to: 'docs/Platform/Derivation',
+              to: 'docs/Platform/Derivation/Overview',
             },
             {
               label: 'Security',
-              to: 'docs/Platform/Security',
+              to: 'docs/Platform/Security/Overview',
             },
             {
               label: 'Demo',
