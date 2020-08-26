@@ -4,7 +4,7 @@ title: Overview
 hide_title: true
 ---
 
-<div style={{ textAlign: 'center', padding: '30px', backgroundColor: 'green' }}>
+<div style={{ textAlign: 'center', padding: '30px', backgroundColor: '#25c2a0', borderRadius: '10px' }}>
   <h1>Security in Allors</h1>
 </div>
 
