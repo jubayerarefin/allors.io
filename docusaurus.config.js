@@ -7,6 +7,7 @@ module.exports = {
   organizationName: 'Allors', // Usually your GitHub org/user name.
   projectName: 'allors.io', // Usually your repo name.
   themeConfig: {
+    onBrokenLinks: 'warn',
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
