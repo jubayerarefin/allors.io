@@ -18,7 +18,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/Derivation',
+          to: 'docs/Platform/Derivation',
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
@@ -44,13 +44,21 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Document',
-              to: 'docs/Derivation',
+              label: 'Derivation',
+              to: 'docs/Platform/Derivation',
+            },
+            {
+              label: 'Security',
+              to: 'docs/Platform/Security',
             },
             {
               label: 'Demo',
-              to: 'docs/Demo',
+              to: 'docs/Platform/Demo',
             },
+            {
+              label: 'Excel',
+              to: 'docs/Excel/Features',
+            }
           ],
         },
         {
@@ -101,7 +109,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Allors, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Allors, Inc. Built with &#x2764; & Docusaurus.`,
     },
   },
   presets: [

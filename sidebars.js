@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    Allors: ['Derivation','Security', 'Demo'],
+    Allors: ['Platform/Derivation/Overview','Platform/Security/Overview', 'Platform/Demo'],
     Excel: ['Excel/Features'],
   },
 };

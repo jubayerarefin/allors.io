@@ -1,0 +1,77 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Security in Allors
+
+# Essence
+
+## Why security
+
+To ensure that sensitive information is only accessible to the users who are entitled to it. An example where this is important is a company. In a company you usually don&#39;t want all users to be able to handle all contacts and invoices.
+
+## Security in Allors
+
+In Allors we use &quot;[role based security.](https://en.wikipedia.org/wiki/Role-based_access_control)&quot;. This means that each user has one or more roleslen and based on this role(len) the user can do certain things or not.. The most common roles are the admin and user. In a &quot;role based security&quot; an admin will usually be able to do anything in front of a user who will usually be able to do almost nothing. In Allors, we distinguish between three types of access, &quot;Read,&quot;, &quot;Write&quot;, and &quot;Execute&quot;. These three rights shall be divided among all roles.. In Allors it is also possible to exterminate different rights per class per role and for further security.
+
+# Example
+
+# Extended
+
+## Diagram of class consistency
+
+<img alt="Security Process" src={useBaseUrl('img/security/interfaces-security-process.png')} />
+
+This diagram shows all the interfaces that control the security process.
+
+<img alt="Security Process" src={useBaseUrl('img/security/security-process.png')} />
+
+## Go over the security process by class + code
+
+### AccessControlLists.cs
+
+The &quot;AccessControlLists&quot; class aims to request all &quot;AccessControlList&quot; from a particular user.
+
+The &quot;this[IObject @object]&quot; method is going to create and add an &quot;AccessControlList&quot; object to &quot;AclByObject&quot;. At the latest, &quot;AccessControlList&quot; item will be returned.
+
+AccessControlList.cs
+
+<img alt="Security Process" src={useBaseUrl('img/security/access-control-list-cs.png')} />
+
+The &quot;AccessControlLists&quot; class aims to see if that a user has access to do a particular operation on a particular class variable.
+
+The &quot;CanRead&quot; method is going to see if the user has access to read the variable class. By calling the method &quot;IsPermitted&quot; with the parameters the &quot;propertyType&quot; and &quot;Operations&quot;.
+
+```csharp
+
+```
+
+The &quot;IsPermitted&quot; method calls for the &quot;lazyload&quot; method. After that, we will see whether this is a permission for the particular class of varaibele. Then we will see if that permission exists with the particular operation. If that permission id is included in the &quot;deniedPermissions&quot;, false returns will be returned. If the permission id is in &quot;EffectivePermissionIdsByAccessControl&quot; collection, true will be returned.
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+The &quot;Lazyload&quot; method is used to request all &quot;deniedPermissions&quot;,&quot;, &quot;accessControls&quot; and &quot;permissionIdByOperationByOperandTypeId&quot; of class variable. . The method can only be called once in its lifetime.. If the object is a &quot;DelegatedAccessControlledObject&quot;. Then the &quot;deniedPermissions&quot; and &quot;securityTokens&quot; of the superclass are caught. If the object is not a &quot;DelegatedAccessControlledObject&quot;, the &quot;deniedPermissions&quot; and &quot;securityTokens&quot; will be taken from the object itself. If no securityTokens could be retrieved, the &quot;DefaultSecurityToken&quot; is used. The &quot;accessControls&quot; will be requested by looking at which &quot;EffectivePermissionIdsByAccessControl&quot; has the right &quot;securityToken&quot;. Only the &quot;permissionIdByOperationByOperandTypeId&quot; are retrieved with the correct &quot;classId&quot; of the cache.
+
+### Roles.cs
+
+<img alt="Security Process" src={useBaseUrl('img/security/roles-cs.png')} />
+
+The role class defines a role that has different permissions.
+
+### Permissions.cs
+
+<img alt="Security Process" src={useBaseUrl('img/security/permission-cs.png')} />
+
+Permissions determines what rights each user has.
+
+### SecurityToken.cs
+
+<img alt="Security Process" src={useBaseUrl('img/security/security-token-cs.png')} />
+
+### UserGroups.cs
+
+User groups are used to group users with a group name.

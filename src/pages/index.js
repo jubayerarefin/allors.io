@@ -8,11 +8,20 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Document</>,
+    title: <>Derivation</>,
     imageUrl: '',
     description: (
       <>
-        Work with Documents in Allors
+        Derivation in Allors
+      </>
+    ),
+  },
+  {
+    title: <>Security</>,
+    imageUrl: '',
+    description: (
+      <>
+        Security in Allors
       </>
     ),
   },
@@ -24,16 +33,7 @@ const features = [
         Work with Excel in Allors
       </>
     ),
-  },
-  {
-    title: <>Dynamic</>,
-    imageUrl: '',
-    description: (
-      <>
-        Allors DLR Implementation
-      </>
-    ),
-  },
+  }
 ];
 
 function Feature({imageUrl, title, description}) {
@@ -68,7 +68,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/Document')}>
+              to={useBaseUrl('docs/Platform/Derivation/Overview')}>
               Get Started!
             </Link>
           </div>
