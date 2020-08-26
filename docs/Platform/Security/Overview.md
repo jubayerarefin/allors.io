@@ -1,9 +1,12 @@
 ---
 id: Overview
 title: Overview
+hide_title: true
 ---
 
-# Security in Allors
+<div style={{ textAlign: 'center', padding: '30px', backgroundColor: 'green' }}>
+  <h1>Security in Allors</h1>
+</div>
 
 # Essence
 

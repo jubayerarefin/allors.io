@@ -1,9 +1,12 @@
 ---
 id: Overview
 title: Overview
+hide_title: true
 ---
 
-# Derivation in Allors
+<div style={{ textAlign: 'center', padding: '30px', backgroundColor: 'green' }}>
+  <h1>Derivation in Allors</h1>
+</div>
 
 # Essence
 

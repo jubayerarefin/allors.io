@@ -10,27 +10,10 @@ We&#39;re going to take as an example the game weeding is played with 4 people (
 
 ## PreDerive Example
 
-The PreDerive of game is going to look at which variable depends on each other (dependencies) before they are derived.&#39; In this case, game will add a dependency on the scoreboard to which this game is associated. Important is the order in the &quot;AddDependency&quot; methods, the first object will not be derived until after the second object. In this case, our game (this) will be derived first, and then only the scoreboard (this. ScoreboardWhereGame) to which this game is linked.
+The PreDerive of game is going to look at which variable depends on each other (dependencies) before they are derived.&#39; In this case, game will add a dependency on the scoreboard to which this game is associated. Important is the order in the "AddDependency" methods, the first object will not be derived until after the second object. In this case, our game (this) will be derived first, and then only the scoreboard (this. ScoreboardWhereGame) to which this game is linked.
 
 ```csharp
-DateTime easternTime = new DateTime(2007, 01, 02, 12, 16, 00);
-string easternZoneId = "Eastern Standard Time";
-try
-{
-   TimeZoneInfo easternZone = TimeZoneInfo.FindSystemTimeZoneById(easternZoneId);
-   Console.WriteLine("The date and time are {0} UTC.",
-                     TimeZoneInfo.ConvertTimeToUtc(easternTime, easternZone));
-}
-catch (TimeZoneNotFoundException)
-{
-   Console.WriteLine("Unable to find the {0} zone in the registry.",
-                     easternZoneId);
-}
-catch (InvalidTimeZoneException)
-{
-   Console.WriteLine("Registry data on the {0} zone has been corrupted.",
-                     easternZoneId);
-}
+
 ```
 
 Example of Derive
@@ -71,99 +54,99 @@ This diagram shows all the interfaces of the derivation process.
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/derivation-cs.png')} />
 
-The derivation process starts in the Derivation.cs class. This class contains the &quot;Derive&quot; methods that are called to start the derivation process.
+The derivation process starts in the Derivation.cs class. This class contains the "Derive" methods that are called to start the derivation process.
 
 ```csharp
 
 ```
 
-The &quot;Derive&quot;methods will create a &quot;CycleCycle object&quot;&quot; and there the &quot;Execute&quot;&quot; methods of invocation.. &quot; These methods receive all &quot;Marked objects&quot;&quot; of which we are aware.. A &quot;marked object&quot; is an object marked by another object, the result is that this highlighted object will be derived.. This will continue to be repeated until all objects are derived. . Once all objects are derived, we return a validation stating that there were problems or not. It is possible to force a Derive even though there are no changes, suppose you still want an object or several objects to be distracted again.
+The "Derive" methods will create a "CycleCycle object" and there the "Execute" methods of invocation. These methods receive all "Marked objects"" of which we are aware. A "marked object" is an object marked by another object, the result is that this highlighted object will be derived. This will continue to be repeated until all objects are derived. . Once all objects are derived, we return a validation stating that there were problems or not. It is possible to force a Derive even though there are no changes, suppose you still want an object or several objects to be distracted again.
 
 ### Cycle.cs
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/cycle-cs.png')} />
 
-The &quot;Cycle&quot; class aims to start the (iteration) and then perform the Post Derives.
+The "Cycle" class aims to start the (iteration) and then perform the Post Derives.
 
 ```csharp
 
 ```
 
-The &quot;Execute&quot; methods create an &quot;Iteration object&quot; and then ins nor the &quot;Execute&quot; methods of this object. These methods will receive all objects that can be executed postderive and all highlighted objects. This will continue to repeat until all objects have completed their PreDerives and Derives. After this, we will call all posts of all items that have not been deleted.
+The "Execute" methods create an "Iteration object" and then ins nor the "Execute" methods of this object. These methods will receive all objects that can be executed postderive and all highlighted objects. This will continue to repeat until all objects have completed their PreDerives and Derives. After this, we will call all posts of all items that have not been deleted.
 
 ### Iteration.cs
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/iteration-cs.png')} />
 
-The &quot;Iteration&quot; class aims to wait until the PreDerives are executed and then perform the Derives.
+The "Iteration" class aims to wait until the PreDerives are executed and then perform the Derives.
 
 ```csharp
 
 ```
 
-The &quot;Execute&quot; method is called by the &quot;CCycle&quot;class. If we have received marked objects, we will refer them to the &quot;Graph object&quot;&quot;. The &quot;Preparation.Execute()&quot; will be released by the PreDerives.ren This will continue to repeat until all PreDerives are ready. When all the PreDerives are ready,the Derives are carried out.
+The "Execute" method is called by the "CCycle"class. If we have received marked objects, we will refer them to the "Graph object"". The "Preparation.Execute()" will be released by the PreDerives.ren This will continue to repeat until all PreDerives are ready. When all the PreDerives are ready,the Derives are carried out.
 
 ```csharp
 
 ```
 
-The &quot;Mark&quot; method is called from a PreDerive of an object. This method will ensure that the object it is given is marked as a parameter if it has not already
+The "Mark" method is called from a PreDerive of an object. This method will ensure that the object it is given is marked as a parameter if it has not already
 
-The &quot;AddDependency&quot; method is also called from a PreDerive of an object. These methods will create the dependency between the received objects.
+The "AddDependency" method is also called from a PreDerive of an object. These methods will create the dependency between the received objects.
 
 ### Preparation.cs
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/preparation-cs.png')} />
 
-The &quot;Preparation&quot; class aims to perform the prederives.
+The "Preparation" class aims to perform the prederives.
 
 ```csharp
 
 ```
 
-The constructor will request the &quot;changeSet&quot;. The &quot;session. Checkpoint&quot; makes a changeet of a certain point. If there are any derives, the objects are initialized. The &quot;changeObjectIds&quot; variable is a collection of all object id that have changed. A collection is filled with the objects that have been changed and the highlighted objects.
+The constructor will request the "changeSet". The "session. Checkpoint" makes a changeet of a certain point. If there are any derives, the objects are initialized. The "changeObjectIds" variable is a collection of all object id that have changed. A collection is filled with the objects that have been changed and the highlighted objects.
 
 ```csharp
 
 ```
 
-The &quot;Execute&quot; method ensures that all objects are prederived and added to the &quot;Prederived&quot; collection.
+The "Execute" method ensures that all objects are prederived and added to the "Prederived" collection.
 
 ### Graph.cs
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/graph-cs.png')} />
 
-The &quot;Graph&quot; class aims to create the &quot;DerivationNodes&quot; and to call their &quot;TopologicalDerive&quot; by node.
+The "Graph" class aims to create the "DerivationNodes" and to call their "TopologicalDerive" by node.
 
 ```csharp
 
 ```
 
-The &quot;GetOrAddDerivationNode&quot; merthode will look into whether or not the object receiving this method already has a &quot;Node&quot;, if not there will be &quot;Node&quot; created, if it will find the correct &quot;Node&quot;. In both cases, the Node will be returned.
+The "GetOrAddDerivationNode" merthode will look into whether or not the object receiving this method already has a "Node", if not there will be "Node" created, if it will find the correct "Node". In both cases, the Node will be returned.
 
 ```csharp
 
 ```
 
-The &quot;Derive&quot; method is about all &quot;Nodes&quot; loops and for each &quot;Node&quot; the &quot;TopologicalDerive&quot; call.
+The "Derive" method is about all "Nodes" loops and for each "Node" the "TopologicalDerive" call.
 
 ### Node.cs
 
 <img alt="Example Diagram" src={useBaseUrl('img/derivation/node-cs.png')} />
 
-The &quot;Node&quot; class aims to invoke the &quot;OnDerive&quot; method of its object. This is not done by any order, but take into account &quot;Dependencies&quot;.
+The "Node" class aims to invoke the "OnDerive" method of its object. This is not done by any order, but take into account "Dependencies".
 
 ```csharp
 
 ```
 
-The &quot;TopologicalDerive&quot; method is the first to look at the fact that the current &quot;Node&quot; has not yet been addressed in order to prevent the same thing from being performed twice. Then it is looked at that there may or may not be &quot;Dependencies&quot;, if this is the case we willperform their &quot;TopologicalDerive&quot; before st. Once all &quot;Dependencies&quot; has performed their &quot;TopologicalDerive&quot; we are going to call our own object its &quot;OnDerive&quot; methods. aanroepen.
+The "TopologicalDerive" method is the first to look at the fact that the current "Node" has not yet been addressed in order to prevent the same thing from being performed twice. Then it is looked at that there may or may not be "Dependencies", if this is the case we willperform their "TopologicalDerive" before st. Once all "Dependencies" has performed their "TopologicalDerive" we are going to call our own object its "OnDerive" methods. aanroepen.
 
-The &quot;TopologicalDerive&quot; method is a variant of a Topological Sort. For more info click [here.](https://en.wikipedia.org/wiki/Topological_sorting#Kahn&#39;s_algorithm).
+The "TopologicalDerive" method is a variant of a Topological Sort. For more info click [here.](https://en.wikipedia.org/wiki/Topological_sorting#Kahn&#39;s_algorithm).
 
 ### AccumulatedChangeSet.cs
 
-The &quot;AccumulatedChangeSet&quot; keeps track of what&#39;s beenadjusted. Every time we do a Derive we can look in this changeset what has been adjusted. Because we can see what has been adjusted, we can prevent a possible course.
+The "AccumulatedChangeSet" keeps track of what&#39;s beenadjusted. Every time we do a Derive we can look in this changeset what has been adjusted. Because we can see what has been adjusted, we can prevent a possible course.
 
 ## Example overflows that go through all Class
 
