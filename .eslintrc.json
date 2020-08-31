@@ -1,0 +1,12 @@
+{
+    "extends": [
+        "plugin:mdx/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2015,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
+}
