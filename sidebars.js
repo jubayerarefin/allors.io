@@ -4,6 +4,15 @@ module.exports = {
       'Platform/Overview/Allors',
       {
         type: "category",
+        label: "Derivation in v2",
+        items: [
+          "Platform/DerivationInV2/Overview",
+          "Platform/DerivationInV2/Derivation",
+          "Platform/DerivationInV2/Migration"
+        ],
+      },
+      {
+        type: "category",
         label: "Derivation",
         items: [
           "Platform/Derivation/Overview",

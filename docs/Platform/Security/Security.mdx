@@ -10,7 +10,7 @@ To ensure that sensitive information is only accessible to the users who are ent
 
 ## Security in Allors
 
-In Allors we use &quot;[role based security.](https://en.wikipedia.org/wiki/Role-based_access_control)&quot;. This means that each user has one or more roleslen and based on this role(len) the user can do certain things or not.. The most common roles are the admin and user. In a &quot;role based security&quot; an admin will usually be able to do anything in front of a user who will usually be able to do almost nothing. In Allors, we distinguish between three types of access, &quot;Read,&quot;, &quot;Write&quot;, and &quot;Execute&quot;. These three rights shall be divided among all roles.. In Allors it is also possible to exterminate different rights per class per role and for further security.
+In Allors we use '[role based security.](https://en.wikipedia.org/wiki/Role-based_access_control)'. This means that each user has one or more roleslen and based on this role(len) the user can do certain things or not. The most common roles are the admin and user. In a "role based security" an admin will usually be able to do anything in front of a user who will usually be able to do almost nothing. In Allors, we distinguish between three types of access, 'Read','Write' and 'Execute'. These three rights shall be divided among all roles. In Allors it is also possible to exterminate different rights per class per role and for further security.
 
 # Example
 
@@ -28,33 +28,33 @@ This diagram shows all the interfaces that control the security process.
 
 ### AccessControlLists.cs
 
-The &quot;AccessControlLists&quot; class aims to request all &quot;AccessControlList&quot; from a particular user.
+The 'AccessControlLists' class aims to request all 'AccessControlList' from a particular user.
 
-The &quot;this[IObject @object]&quot; method is going to create and add an &quot;AccessControlList&quot; object to &quot;AclByObject&quot;. At the latest, &quot;AccessControlList&quot; item will be returned.
+The 'this[IObject @object]' method is going to create and add an 'AccessControlList' object to 'AclByObject'. At the latest, 'AccessControlList' item will be returned.
 
 AccessControlList.cs
 
 <img alt="Security Process" src={useBaseUrl('img/security/access-control-list-cs.png')} />
 
-The &quot;AccessControlLists&quot; class aims to see if that a user has access to do a particular operation on a particular class variable.
+The 'AccessControlLists' class aims to see if that a user has access to do a particular operation on a particular class variable.
 
-The &quot;CanRead&quot; method is going to see if the user has access to read the variable class. By calling the method &quot;IsPermitted&quot; with the parameters the &quot;propertyType&quot; and &quot;Operations&quot;.
-
-```csharp
-
-```
-
-The &quot;IsPermitted&quot; method calls for the &quot;lazyload&quot; method. After that, we will see whether this is a permission for the particular class of varaibele. Then we will see if that permission exists with the particular operation. If that permission id is included in the &quot;deniedPermissions&quot;, false returns will be returned. If the permission id is in &quot;EffectivePermissionIdsByAccessControl&quot; collection, true will be returned.
+The 'CanRead' method is going to see if the user has access to read the variable class. By calling the method 'IsPermitted' with the parameters the 'propertyType' and 'Operations'.
 
 ```csharp
 
 ```
 
+The 'IsPermitted' method calls for the 'lazyload' method. After that, we will see whether this is a permission for the particular class of varaibele. Then we will see if that permission exists with the particular operation. If that permission id is included in the 'deniedPermissions', false returns will be returned. If the permission id is in 'EffectivePermissionIdsByAccessControl' collection, true will be returned.
+
 ```csharp
 
 ```
 
-The &quot;Lazyload&quot; method is used to request all &quot;deniedPermissions&quot;,&quot;, &quot;accessControls&quot; and &quot;permissionIdByOperationByOperandTypeId&quot; of class variable. . The method can only be called once in its lifetime.. If the object is a &quot;DelegatedAccessControlledObject&quot;. Then the &quot;deniedPermissions&quot; and &quot;securityTokens&quot; of the superclass are caught. If the object is not a &quot;DelegatedAccessControlledObject&quot;, the &quot;deniedPermissions&quot; and &quot;securityTokens&quot; will be taken from the object itself. If no securityTokens could be retrieved, the &quot;DefaultSecurityToken&quot; is used. The &quot;accessControls&quot; will be requested by looking at which &quot;EffectivePermissionIdsByAccessControl&quot; has the right &quot;securityToken&quot;. Only the &quot;permissionIdByOperationByOperandTypeId&quot; are retrieved with the correct &quot;classId&quot; of the cache.
+```csharp
+
+```
+
+The 'Lazyload' method is used to request all 'deniedPermissions',', 'accessControls' and 'permissionIdByOperationByOperandTypeId' of class variable. . The method can only be called once in its lifetime.. If the object is a 'DelegatedAccessControlledObject'. Then the 'deniedPermissions' and 'securityTokens' of the superclass are caught. If the object is not a 'DelegatedAccessControlledObject', the 'deniedPermissions' and 'securityTokens' will be taken from the object itself. If no securityTokens could be retrieved, the 'DefaultSecurityToken' is used. The 'accessControls' will be requested by looking at which 'EffectivePermissionIdsByAccessControl' has the right 'securityToken'. Only the 'permissionIdByOperationByOperandTypeId' are retrieved with the correct 'classId' of the cache.
 
 ### Roles.cs
 
